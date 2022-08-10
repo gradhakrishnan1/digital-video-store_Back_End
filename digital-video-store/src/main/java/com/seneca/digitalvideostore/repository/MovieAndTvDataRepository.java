@@ -15,7 +15,7 @@ public interface MovieAndTvDataRepository extends MongoRepository<MovieAndTvShow
     List<MovieAndTvShowData> findByShowType(ShowType showType);
     List<MovieAndTvShowData> findByNameContainsIgnoreCase(String title);
 
-    @Query(value = "{'isFeatured':true, 'showType':?0}")
+    @Query(value = "{'featured':true, 'showType':?0}")
     List<MovieAndTvShowData> findFeaturedShowsByType(ShowType showType);
 
     void deleteByName(String showName);

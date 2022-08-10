@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @Document("movieAndTvShowData")
 public class MovieAndTvShowData {
     @Id
-    @JsonIgnore
     private String _id;
 
     @NotBlank(message = "Name is mandatory")
@@ -39,5 +38,5 @@ public class MovieAndTvShowData {
     @DecimalMin(value = "0.0", inclusive = false, message = "Purchase Price should be greater than 0.0")
     private BigDecimal purchasePrice;
 
-    private boolean isFeatured;
+    private boolean featured;
 }
